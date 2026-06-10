@@ -68,19 +68,11 @@ This extension contributes Java modernization capabilities on top of Bob, includ
 
 ### Java Upgrade workflow
 
-[![Java Upgrade workflow step](assets/java-upgrade/04-java-upgrade-version.png)][java-upgrade-step] [![Java Upgrade validation](assets/java-upgrade/07-validate.png)][java-upgrade-validate] [![Java Upgrade workflow plan](assets/java-upgrade/06-mermaid.png)][java-upgrade-plan]
-
-[java-upgrade-step]: assets/java-upgrade/04-java-upgrade-version.png
-[java-upgrade-validate]: assets/java-upgrade/07-validate.png
-[java-upgrade-plan]: assets/java-upgrade/06-mermaid.png
+Coming very soon
 
 ### WebSphere to Liberty migration workflow
 
-[![Liberty migration workflow selection](assets/liberty-replatforming/03-liberty-select.png)][liberty-selection] [![Liberty migration validation](assets/liberty-replatforming/06-validate.png)][liberty-validate] [![Liberty migration workflow plan](assets/liberty-replatforming/05-mermaid.png)][liberty-plan]
-
-[liberty-selection]: assets/liberty-replatforming/03-liberty-select.png
-[liberty-validate]: assets/liberty-replatforming/06-validate.png
-[liberty-plan]: assets/liberty-replatforming/05-mermaid.png
+Coming very soon
 
 ## FAQ
 
