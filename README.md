@@ -1,68 +1,105 @@
-# Bob Java Premium Add-On
+# IBM Bob Premium Package for Java Modernization
 
-Bob Java Premium Add-On extends [IBM Bob](https://bob.ibm.com) with guided Java modernization capabilities for enterprise applications.
+Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package for Java** extends [IBM Bob](https://bob.ibm.com) with AI-assisted workflows surfaced natively in Bob chat — upgrade runtimes, migrate from WebSphere to Liberty, generate test coverage, rearchitect legacy UIs, and eliminate CVEs — all without leaving Bob.
 
-Modernize Java estates with Bob workflows and tools designed for four core scenarios:
+## Workflows at a Glance
 
-- **Java Upgrade**
-- **Java Unit Test Generation**
-- **WebSphere to Liberty Migration**
-- **UI Modernization**
+| Workflow                                                     | What it does                                                                  |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| [**Java Upgrade**](#java-upgrade)                            | Upgrade to Java 11 → 17 → 21 → 25 with automated recipes + agentic fix loops  |
+| [**Liberty Replatforming**](#websphere-to-liberty-migration) | Migrate from WebSphere traditional to Liberty using AMA analysis reports      |
+| [**Java Unit Testing**](#java-unit-test-generation)          | Auto-generate JUnit tests with JaCoCo coverage, guided by a strategy document |
+| [**UI Modernization**](#ui-modernization)                    | Split JSF/Struts monoliths into a Java backend + React frontend               |
+| [**Vulnerability Detection**](#vulnerability-detection)      | Scan every Maven/Gradle dependency against CVE database                       |
 
-## Why Bob Java Premium Add-On
+## Why Bob Premium Package for Java
 
-Teams modernizing Java applications usually need more than code generation. They need guided workflows, repeatable migration steps, and tooling that understands enterprise modernization goals.
+Modernizing Java applications takes more than generating code. It requires deep knowledge of the ecosystem, a structured approach to each scenario, and tooling that can handle the complexity of real enterprise codebases — multi-module projects, legacy middleware, aging test suites, and dependency sprawl.
 
-Bob Java Premium Add-On adds Java-focused modernization support directly into Bob so teams can move faster on high-value work inside the editor.
+Bob Premium Package for Java brings that expertise directly into Bob as guided, multi-step workflows. Each workflow encodes proven modernization practices into discrete, repeatable steps that run inside the editor where the code lives.
 
 ## Key Capabilities
 
-| Capability                         | Description                                                                                                                               |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **Java Upgrade**                   | Use Bob workflows tailored for Java upgrade scenarios to help structure runtime and application modernization work.                       |
-| **Java Unit Test Generation**      | Generate Java unit tests to expand test coverage and support safer refactoring during modernization and maintenance work.                 |
-| **WebSphere to Liberty Migration** | Accelerate migration work for applications moving from traditional WebSphere environments to Liberty with Java-focused tools and recipes. |
-| **UI Modernization**               | Use Bob to assist with modernization work that spans Java backends and frontend-facing application layers.                                |
-| **Java-aware Bob integration**     | Surface Java-specific tools, recipes, test generation, and environment-aware capabilities directly in the Bob experience.                 |
+### Java Upgrade
 
-## Common Scenarios
+Upgrades Java applications across four LTS targets: **Java 11, 17, 21, and 25**.
 
-### Upgrade legacy Java applications
+The workflow:
 
-Move applications toward newer Java versions with workflow guidance that helps structure modernization tasks.
+1. **Detects your environment** — reads installed JDKs, identifies your build tool (Maven or Gradle), Java EE version, and multi-module layout.
+2. **Installs and switches Java** via SDKMAN (Linux/macOS) or WinGet (Windows).
+3. **Runs Automated recipes** — selects the correct recipe and applies it against your build, tracking every modified file as a diff.
+4. **Optional Jakarta EE migration** — simultaneously upgrades `javax.*` namespaces to `jakarta.*` using targeted EE recipes.
+5. **Builds and parses** — runs your build, extracts structured errors and warnings from Maven or Gradle logs, and groups them by root cause.
+6. **Agentic fix loop** — an AI subagent works through each error category, applies fixes, and re-builds until the project compiles cleanly.
+7. **Generates a Mermaid diagram** summarizing every task, token spend, and execution time.
 
-### Re-platform middleware workloads
+Supports Maven and Gradle projects, including multi-module builds.
 
-Support application migration from WebSphere traditional environments toward Liberty-based deployments.
+### WebSphere to Liberty Migration
 
-### Generate Java unit tests
+Migrates applications from **WebSphere Application Server traditional** to **IBM WebSphere Liberty**, guided by an [IBM Application Modernization Accelerator (AMA)](https://www.ibm.com/docs/en/ama?topic=about-application-modernization-accelerator) analysis report.
 
-Create Java unit tests for existing code to support safer refactoring and modernization.
+The workflow:
 
-### Modernize existing application experiences
+1. **Reads your AMA migration plan** — unpacks the archive and the enrichment report
+2. **Injects Liberty config** — copies `server.xml` and a `Containerfile` from the AMA into the correct project paths, handling multi-module layouts automatically.
+3. **Runs Liberty recipes** — applies OpenRewrite Liberty replatforming recipes via Maven or Gradle.
+4. **Agentic replatforming** — an AI subagent resolves remaining compatibility issues flagged in the AMA report.
+5. **Generates deployment guidance** — produces a Liberty deployment step and a Mermaid progress diagram.
 
-Use Bob to help plan and implement UI refresh work connected to Java applications.
+### Java Unit Test Generation
+
+Systematically grows test coverage using an AI-driven, strategy-first approach.
+
+The workflow:
+
+1. **Detects your test setup** — finds existing test files, frameworks (JUnit, TestNG), build commands, and coverage tools.
+2. **Installs JaCoCo** — if no coverage tool is configured, adds JaCoCo to the build automatically.
+3. **Generates a strategy document** — creates a project-specific unit testing strategy file that guides all subsequent generation.
+4. **Selects candidates** — lets you choose which packages, classes, or methods to target (supports git-diff-based selection for changed code only).
+5. **Generates tests** — runs targeted AI generation at the package, class, or method level, using the strategy document and existing test files as context.
+6. **Runs tests and reports** — executes the new tests and summarizes pass/fail results.
+
+Test generation is scoped to the right granularity: a single method gets a focused prompt; a full package gets a broader one.
+
+### UI Modernization
+
+Separates legacy **JSF or Struts** monoliths into a decoupled **Java backend + React frontend** — with control over which parts to modernize.
+
+The workflow:
+
+1. **Analyzes the architecture** — examines the project's UI framework, dependencies, and module boundaries.
+2. **Configures targets** — lets you choose the target backend framework, frontend framework, and design system.
+3. **Backend migration** — an AI subagent extracts backend logic and exposes REST APIs.
+4. **Frontend scaffolding** — sets up the React project and design system.
+5. **Component & page generation** — generates React components, the home page, and remaining pages with backend integration.
+6. **Validates the result** — runs the migrated frontend and backend to confirm correctness.
+
+Each phase is independent — you can run backend migration, frontend setup, or both.
+
+### Vulnerability Detection
+
+Scans project dependencies against the **[OSV.dev](https://osv.dev)** open-source vulnerability database.
+
+The workflow:
+
+1. **Detects dependencies** — parses Maven POM files or Gradle build files to extract the full dependency list with versions.
+2. **Queries OSV in batch** — sends all dependencies to the OSV batch API in a single request, then fetches full CVE details (severity, affected versions, summary) for each hit.
+3. **Displays results** — renders a structured vulnerability list with CVSS scores directly in chat.
+4. **Optionally fixes** — launches a Bob subtask that updates or replaces vulnerable packages and verifies the build still passes.
 
 ## Getting Started
 
 1. Install [IBM Bob](https://bob.ibm.com).
-2. Install Bob Java Premium Add-On.
-3. Open your Java project or workspace in VS Code.
-4. Start Bob and select the Java modernization capabilities made available by this add-on.
+2. Subscribe to IBM Bob Premium Package for Java Modernization.
+3. Open your Java project or workspace in Bob.
+4. Click **Start Workflow**, or type `Java Upgrade`, `Liberty Replatforming`, `Java Unit Testing`, `UI Modernization`, or `Vulnerabilities Detection` to launch a workflow directly.
 
 ## Requirements
 
-- Visual Studio Code `^1.106.1`
 - [IBM Bob](https://bob.ibm.com)
-
-## What This Extension Adds
-
-This extension contributes Java modernization capabilities on top of Bob, including:
-
-- Java modernization mode
-- Java unit test generation capabilities
-- Java-specific tools for recipes, environment detection, and testing support
-- Workflows for upgrade and migration scenarios
+- IBM Bob Premium Package for Java Modernization subscription
 
 ## Screenshots
 
@@ -78,20 +115,32 @@ Coming very soon
 
 ### Does this extension work by itself?
 
-No. This add-on extends [IBM Bob](https://bob.ibm.com) and depends on it.
+No. This add-on extends [IBM Bob](https://bob.ibm.com) and requires it as a dependency.
 
-### Who is this extension for?
+### What Java versions are supported for upgrade?
 
-It is intended for teams modernizing enterprise Java applications and related platforms.
+The following upgrade paths are supported:
 
-### Does this only cover code upgrades?
+- **Java version upgrades:** You can upgrade from Java 8 to any of the modern LTS releases — Java 11, 17, 21, or 25. This covers both short incremental jumps (e.g. 8 → 11) and longer leaps across multiple versions (e.g. 8 → 25).
+- **Jakarta EE upgrades:** You can upgrade from Jakarta EE 7 (formerly Java EE 7) to any of EE 8, 9, 10, or 11.
+- Java and Jakarta EE upgrades can be run simultaneously, so you can modernise your runtime version and your API namespace in a single pass.
 
-No. The extension is positioned for broader modernization work, including runtime upgrades, Java unit test generation, platform migration, and UI modernization support.
+### Do I need SDKMAN or WinGet?
+
+Only for the Java Upgrade workflow's automatic JDK install and switch steps.
+
+### Does it work with multi-module Maven/Gradle projects?
+
+Yes. Build detection, recipe execution, and log analysis all handle multi-module layouts, including correct `server.xml` placement for Liberty migration.
+
+### Does the Liberty migration workflow require an AMA file?
+
+Yes. The Liberty Replatforming workflow is built around the IBM AMA analysis report. You'll be prompted to select the AMA zip at the start of the workflow.
 
 ## Feedback and Support
 
-- Issues: https://github.com/ibm/bob/issues
-- Source: https://github.com/ibm/bob/tree/main/bob-java
+- Issues: https://github.com/IBM/ibm-bob/issues
+- Source: https://github.com/IBM/ibm-bob-java
 
 ## License
 
