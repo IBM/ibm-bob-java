@@ -2,6 +2,26 @@
 
 Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package for Java** extends [IBM Bob](https://bob.ibm.com) with AI-assisted workflows surfaced natively in Bob chat — upgrade runtimes, migrate from WebSphere to Liberty, generate test coverage, rearchitect legacy UIs, and eliminate CVEs — all without leaving Bob.
 
+<details>
+<summary>Table of Contents</summary>
+
+- [Workflows at a Glance](#workflows-at-a-glance)
+- [Why Bob Premium Package for Java](#why-bob-premium-package-for-java)
+- [Key Capabilities](#key-capabilities)
+    - [Java Upgrade](#java-upgrade)
+    - [WebSphere to Liberty Migration](#websphere-to-liberty-migration)
+    - [Java Unit Test Generation](#java-unit-test-generation)
+    - [UI Modernization](#ui-modernization)
+    - [Vulnerability Detection](#vulnerability-detection)
+- [Getting Started](#getting-started)
+- [Requirements](#requirements)
+- [Screenshots](#screenshots)
+- [FAQ](#faq)
+- [Feedback and Support](#feedback-and-support)
+- [License](#license)
+
+</details>
+
 ## Workflows at a Glance
 
 | Workflow                                                     | What it does                                                                  |
@@ -11,6 +31,10 @@ Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package
 | [**Java Unit Testing**](#java-unit-test-generation)          | Auto-generate JUnit tests with JaCoCo coverage, guided by a strategy document |
 | [**UI Modernization**](#ui-modernization)                    | Split JSF/Struts monoliths into a Java backend + React frontend               |
 | [**Vulnerability Detection**](#vulnerability-detection)      | Scan every Maven/Gradle dependency against CVE database                       |
+
+![alt text][screens-flows]
+
+[screens-flows]: ./assets/screenshots/flows.png "Java Modernization flows in chat"
 
 ## Why Bob Premium Package for Java
 
@@ -103,13 +127,17 @@ The workflow:
 
 ## Screenshots
 
-### Java Upgrade workflow
+![alt text][screens-tools-inline]
 
-Coming very soon
+[screens-tools-inline]: ./assets/screenshots/tools-inline.png "Java agent tools and inline edits"
 
-### WebSphere to Liberty migration workflow
+![alt text][screens-mermaid-flowchart]
 
-Coming very soon
+[screens-mermaid-flowchart]: ./assets/screenshots/UT-mermaid-big-changes.png "Mermaid flowchart for applied changes"
+
+![alt text][screens-subagents]
+
+[screens-subagents]: ./assets/screenshots/UT-subagents.png "Multiple subagents running in parallel"
 
 ## FAQ
 
