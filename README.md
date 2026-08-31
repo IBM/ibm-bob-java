@@ -12,7 +12,8 @@ Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package
     - [WebSphere to Liberty Migration](#websphere-to-liberty-migration)
     - [Java Unit Test Generation](#java-unit-test-generation)
     - [UI Modernization](#ui-modernization)
-    - [Vulnerability Detection](#vulnerability-detection)
+    - [Java Vulnerability Remediation](#java-vulnerability-remediation)
+    - [Spring Boot to Quarkus Migration](#spring-boot-to-quarkus)
 - [Getting Started](#getting-started)
 - [Requirements](#requirements)
 - [Screenshots](#screenshots)
@@ -30,7 +31,8 @@ Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package
 | [**Liberty Replatforming**](#websphere-to-liberty-migration) | Migrate from WebSphere traditional to Liberty using AMA analysis reports      |
 | [**Java Unit Testing**](#java-unit-test-generation)          | Auto-generate JUnit tests with JaCoCo coverage, guided by a strategy document |
 | [**UI Modernization**](#ui-modernization)                    | Split JSF/Struts monoliths into a Java backend + React frontend               |
-| [**Vulnerability Detection**](#vulnerability-detection)      | Scan every Maven/Gradle dependency against CVE database                       |
+| [**Java Vulnerability Remediation**](#java-vulnerability-remediation) | Scan every Maven/Gradle dependency against CVE database                       |
+| [**Spring Boot to Quarkus Migration**](#spring-boot-to-quarkus)        | Modular, gate-driven skill flow with validations after every phase |
 
 ![alt text][screens-flows]
 
@@ -102,7 +104,7 @@ The workflow:
 
 Each phase is independent — you can run backend migration, frontend setup, or both.
 
-### Vulnerability Detection
+### Java Vulnerability Remediation
 
 Scans project dependencies against the **[OSV.dev](https://osv.dev)** open-source vulnerability database.
 
@@ -113,12 +115,32 @@ The workflow:
 3. **Displays results** — renders a structured vulnerability list with CVSS scores directly in chat.
 4. **Optionally fixes** — launches a Bob subtask that updates or replaces vulnerable packages and verifies the build still passes.
 
+### Spring Boot to Quarkus Migration
+
+Migrates **Spring Boot** applications to **Quarkus** using a modular, gate-driven flow that compiles after every phase.
+
+The workflow:
+
+1. **Analyzes & plans** — detects existing Spring Boot footprint (starters, annotations, config) and prompts you to choose Spring Compatibility or Full Quarkus migration strategy.
+2. **Runs gated modules** — executes Spring Boot build, JPA mappings, and UI templates with their Quarkus equivalents — compiling after each phase.
+3. **Verifies & reports** — confirms a clean build, no leftover Spring dependencies, passing tests, and a live health endpoint; produces a structured migration report.
+
+---
+
 ## Getting Started
 
 1. Install [IBM Bob](https://bob.ibm.com).
 2. Subscribe to IBM Bob Premium Package for Java Modernization.
 3. Open your Java project or workspace in Bob.
-4. Click **Start Workflow**, or type `Java Upgrade`, `Liberty Replatforming`, `Java Unit Testing`, `UI Modernization`, or `Vulnerabilities Detection` to launch a workflow directly.
+4. Click **Start Workflow**, or type any of the workflow names below in the Bob prompt to launch it directly:
+   - `Java Upgrade`
+   - `Liberty Replatforming`
+   - `Java Unit Testing`
+   - `UI Modernization`
+   - `Java Vulnerability Remediation`
+   - `Spring Boot to Quarkus`
+
+> **Tip:** You can also launch the Spring Boot to Quarkus migration instantly by typing `/migrate-spring-to-quarkus` in the prompt window.
 
 ## Requirements
 
