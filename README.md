@@ -28,7 +28,7 @@ Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package
 | Workflow                                                     | What it does                                                                  |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | [**Java Upgrade**](#java-upgrade)                            | Upgrade to Java 11 → 17 → 21 → 25 with automated recipes + agentic fix loops  |
-| [**Liberty Replatforming**](#websphere-to-liberty-modernization) | Migrate from WebSphere traditional to Liberty using AMA analysis reports      |
+| [**Liberty Modernization**](#websphere-to-liberty-modernization) | Migrate from WebSphere traditional to Liberty using AMA analysis reports      |
 | [**Java Unit Testing**](#java-unit-test-generation)          | Auto-generate JUnit tests with JaCoCo coverage, guided by a strategy document |
 | [**UI Modernization**](#ui-modernization)                    | Split JSF/Struts monoliths into a Java backend + React frontend               |
 | [**Java Vulnerability Remediation**](#java-vulnerability-remediation) | Scan every Maven/Gradle dependency against CVE database                       |
