@@ -9,11 +9,11 @@ Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package
 - [Why Bob Premium Package for Java](#why-bob-premium-package-for-java)
 - [Key Capabilities](#key-capabilities)
     - [Java Upgrade](#java-upgrade)
-    - [WebSphere to Liberty Migration](#websphere-to-liberty-migration)
+    - [Liberty Modernization](#websphere-to-liberty-modernization)
     - [Java Unit Test Generation](#java-unit-test-generation)
     - [UI Modernization](#ui-modernization)
     - [Java Vulnerability Remediation](#java-vulnerability-remediation)
-    - [Spring Boot to Quarkus Migration](#spring-boot-to-quarkus)
+    - [Spring Boot to Quarkus Migration](#spring-boot-to-quarkus-migration)
 - [Getting Started](#getting-started)
 - [Requirements](#requirements)
 - [Screenshots](#screenshots)
@@ -28,11 +28,11 @@ Bring Enterprise Java modernization directly into Bob. **IBM Bob Premium Package
 | Workflow                                                     | What it does                                                                  |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | [**Java Upgrade**](#java-upgrade)                            | Upgrade to Java 11 → 17 → 21 → 25 with automated recipes + agentic fix loops  |
-| [**Liberty Replatforming**](#websphere-to-liberty-migration) | Migrate from WebSphere traditional to Liberty using AMA analysis reports      |
+| [**Liberty Modernization**](#websphere-to-liberty-modernization) | Modernize from WebSphere traditional to Liberty using AMA analysis reports      |
 | [**Java Unit Testing**](#java-unit-test-generation)          | Auto-generate JUnit tests with JaCoCo coverage, guided by a strategy document |
 | [**UI Modernization**](#ui-modernization)                    | Split JSF/Struts monoliths into a Java backend + React frontend               |
 | [**Java Vulnerability Remediation**](#java-vulnerability-remediation) | Scan every Maven/Gradle dependency against CVE database                       |
-| [**Spring Boot to Quarkus Migration**](#spring-boot-to-quarkus)        | Modular, gate-driven skill flow with validations after every phase |
+| [**Spring Boot to Quarkus Migration**](#spring-boot-to-quarkus-migration)        | Modular, gate-driven skill flow with validations after every phase |
 
 ![alt text][screens-flows]
 
@@ -62,9 +62,9 @@ The workflow:
 
 Supports Maven and Gradle projects, including multi-module builds.
 
-### WebSphere to Liberty Migration
+### WebSphere to Liberty Modernization
 
-Migrates applications from **WebSphere Application Server traditional** to **IBM WebSphere Liberty**, guided by an [IBM Application Modernization Accelerator (AMA)](https://www.ibm.com/docs/en/ama?topic=about-application-modernization-accelerator) analysis report.
+Modernizes applications from **WebSphere Application Server traditional** to **IBM WebSphere Liberty**, guided by an [IBM Application Modernization Accelerator (AMA)](https://www.ibm.com/docs/en/ama?topic=about-application-modernization-accelerator) analysis report.
 
 The workflow:
 
